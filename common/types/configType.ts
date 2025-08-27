@@ -15,6 +15,7 @@ enum Pattern {
   floatingCogs = 'Floating Cogs',
   diagonalStripes = 'Diagonal Stripes',
   solid = 'Solid',
+  transparent = 'Transparent',
 }
 
 enum Font {
@@ -23,11 +24,12 @@ enum Font {
   raleway = 'Raleway',
   rokkitt = 'Rokkitt',
   sourceCodePro = 'Source Code Pro',
+  jetBrainsMono = 'JetBrains Mono',
   koHo = 'KoHo',
   jost = 'Jost',
 }
 
-export type RequiredConfigs = {
+type RequiredConfigs = {
   logo: string
 
   font: Font

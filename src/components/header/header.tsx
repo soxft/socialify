@@ -1,20 +1,21 @@
 import Link from 'next/link'
+import React from 'react'
 import { SiGithub } from 'react-icons/si'
 
-const Header = () => {
+const Header: React.FC = () => {
   return (
     <header>
       <div className="navbar">
         <div className="flex-1">
           <Link
-            className="btn btn-ghost text-primary-content normal-case text-xl"
+            className="btn btn-ghost text-xl text-white font-extrabold"
             href="/"
           >
             <SiGithub className="w-8 h-8" />
-            &nbsp; GitHub Socialify
+            GitHub Socialify
           </Link>
         </div>
-        <div className="flex-0">
+        <div className="flex-0 no-screenshot">
           <Link
             className="invisible sm:visible mr-6"
             href="https://www.producthunt.com/posts/socialify?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-socialify"
@@ -52,39 +53,6 @@ const Header = () => {
           </Link>
         </div>
       </div>
-
-      <style jsx>{`
-        .github-svg:hover .octo-arm {
-          animation: octocat-wave 560ms ease-in-out;
-        }
-
-        @keyframes octocat-wave {
-          0%,
-          100% {
-            transform: rotate(0);
-          }
-
-          20%,
-          60% {
-            transform: rotate(-25deg);
-          }
-
-          40%,
-          80% {
-            transform: rotate(10deg);
-          }
-        }
-
-        @media (max-width: 500px) {
-          .github-svg:hover .octo-arm {
-            animation: none;
-          }
-
-          .github-svg .octo-arm {
-            animation: octocat-wave 560ms ease-in-out;
-          }
-        }
-      `}</style>
     </header>
   )
 }

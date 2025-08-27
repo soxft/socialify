@@ -2,14 +2,14 @@
 import satori, { init as initSatori } from 'satori/wasm'
 // @ts-ignore
 import initYoga from 'yoga-wasm-web'
-// @ts-ignore
-import yogaWasm from '../public/yoga.wasm?module'
 
-import { Card } from '../src/components/preview/card'
-import { autoThemeCss } from './helpers'
-import { getCardConfig, getFonts, loadDynamicAsset } from './renderCard'
-import { Theme } from './types/configType'
-import QueryType from './types/queryType'
+import { autoThemeCss } from '@/common/helpers'
+import { getCardConfig, getFonts, loadDynamicAsset } from '@/common/renderCard'
+import { Theme } from '@/common/types/configType'
+import type QueryType from '@/common/types/queryType'
+import Card from '@/src/components/preview/card'
+// @ts-ignore: Not a typical module, using import alias will cause an error.
+import yogaWasm from '../public/yoga.wasm?module'
 
 const renderCardSVG = async (query: QueryType) => {
   const yoga = await initYoga(yogaWasm)

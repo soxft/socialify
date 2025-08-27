@@ -1,4 +1,4 @@
-import ConfigType from '../../../common/types/configType'
+import type ConfigType from '@/common/types/configType'
 
 type CheckBoxProps = {
   title: string
@@ -18,17 +18,27 @@ const CheckBoxWrapper = ({
 }: CheckBoxProps) => {
   return (
     <div className="form-control">
-      <label className="label cursor-pointer justify-start gap-2">
+      <label
+        className="label cursor-pointer justify-start gap-2"
+        htmlFor={keyName}
+      >
         <input
-          className="checkbox checkbox-sm"
+          id={keyName}
+          name={keyName}
+          className="checkbox checkbox-sm bg-base-100"
           type="checkbox"
           checked={!!checked}
           disabled={disabled}
           onChange={(e) => {
             handleChange({ state: e.target.checked }, keyName)
           }}
+          aria-disabled={disabled}
+          aria-checked={!!checked}
+          aria-labelledby={`${keyName}-title`}
         />
-        <span className="label-text">{title}</span>
+        <span className="label-text font-semibold" id={`${keyName}-title`}>
+          {title}
+        </span>
       </label>
     </div>
   )

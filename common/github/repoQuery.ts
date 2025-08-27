@@ -1,4 +1,5 @@
-import { HOST_PREFIX } from '../helpers'
+import { SOCIALIFY_GRAPHQL_ENDPOINT } from '@/common/constants'
+import { HOST_PREFIX } from '@/common/helpers'
 
 export const getRepoDetails = async (owner: string, name: string) => {
   const body = {
@@ -13,7 +14,7 @@ export const getRepoDetails = async (owner: string, name: string) => {
           issues(states: OPEN) {
             totalCount
           }
-          languages(first: 1, orderBy: { field: SIZE, direction: DESC }) {
+          languages(first: 10, orderBy: { field: SIZE, direction: DESC }) {
             totalCount
             nodes {
               name
@@ -40,7 +41,7 @@ export const getRepoDetails = async (owner: string, name: string) => {
     },
   }
 
-  const res = await fetch(`${HOST_PREFIX}/graphql`, {
+  const res = await fetch(`${HOST_PREFIX}${SOCIALIFY_GRAPHQL_ENDPOINT}`, {
     method: 'POST',
     headers: {
       'content-type': 'application/json',

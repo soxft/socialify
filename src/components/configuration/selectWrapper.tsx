@@ -1,10 +1,10 @@
-import ConfigType from '../../../common/types/configType'
+import type ConfigType from '@/common/types/configType'
 
-type SelectWrapperProps = {
+interface SelectWrapperProps {
   title: string
   alt?: string
   keyName: keyof ConfigType
-  map: { key: string; label: any }[]
+  map: { key: string; label: string; disabled?: boolean }[]
   value: string
   handleChange: (value: any, key: keyof ConfigType) => void
 }
@@ -17,22 +17,38 @@ const SelectWrapper = ({
   value,
   handleChange,
 }: SelectWrapperProps) => {
+  const selectId = `${keyName}-select`
+
   return (
     <div className="form-control w-full">
-      <label className="label">
-        <span className="label-text">{title}</span>
-        {alt && <span className="label-text-alt">{alt}</span>}
+      <label className="label" htmlFor={selectId}>
+        <span className="label-text font-semibold" id={`${selectId}-title`}>
+          {title}
+        </span>
+        {alt && (
+          <span className="label-text-alt font-semibold" id={`${selectId}-alt`}>
+            {alt}
+          </span>
+        )}
       </label>
       <select
-        className="select select-bordered select-sm"
+        id={selectId}
+        name={keyName}
+        className="select select-bordered select-sm font-semibold"
         onChange={(e) => {
           handleChange({ val: e.target.value, required: true }, keyName)
         }}
         value={value}
+        aria-labelledby={`${selectId}-title ${alt ? `${selectId}-alt` : ''}`}
       >
-        {map.map(({ key, label }) => {
+        {map.map(({ key, label, disabled }) => {
           return (
-            <option key={key} value={label}>
+            <option
+              key={key}
+              value={label}
+              disabled={disabled}
+              style={disabled ? { color: '#999', fontStyle: 'italic' } : {}}
+            >
               {label}
             </option>
           )

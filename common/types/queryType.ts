@@ -1,4 +1,4 @@
-import { Font, Pattern, Theme } from './configType'
+import { Font, Pattern, Theme } from '@/common/types/configType'
 
 type QueryType = {
   font: Font
@@ -11,7 +11,7 @@ type QueryType = {
   issues: string
   pulls: string
   description: string
-  descriptionEditable: string
+  custom_description: string
   owner: string
   name: string
   logo: string

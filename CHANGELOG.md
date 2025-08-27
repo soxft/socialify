@@ -1,5 +1,306 @@
 # socialify
 
+## 2.21.12
+
+### Patch Changes
+
+- 7a2f1b5: fix font cdn url
+
+## 2.21.11
+
+### Patch Changes
+
+- e411607: Upgrade pnpm and docker deployment
+
+## 2.21.10
+
+### Patch Changes
+
+- 47b9d50: 📝 Improve release notes
+
+## 2.21.9
+
+### Patch Changes
+
+- 609ced2: 📝 Improve release notes
+
+## 2.21.8
+
+### Patch Changes
+
+- 0cd17c2: 📝 Improve release notes
+
+## 2.21.7
+
+### Patch Changes
+
+- 8d91de9: 📝 Improve release notes
+
+## 2.21.6
+
+### Patch Changes
+
+- f8b2d30: 📝 Improve release notes
+
+## 2.21.5
+
+### Patch Changes
+
+- 5808b34: 📝 Improve release notes
+
+## 2.21.4
+
+### Patch Changes
+
+- f439179: 📝 Improve release notes
+
+## 2.21.3
+
+### Patch Changes
+
+- 7e589a8: Upgrade satori. Improve playwright tests.
+
+## 2.21.2
+
+### Patch Changes
+
+- d9c8139: Revert cache headers update as it was already functional
+
+## 2.21.1
+
+### Patch Changes
+
+- 56f6bb1: Update cache headers for better cache hits
+
+## 2.21.0
+
+### Minor Changes
+
+- c264039: Add icons for new languages, tools, frameworks, and platforms
+- 219500c: Add language selection
+
+## 2.20.2
+
+### Patch Changes
+
+- 42f1342: Fix svg logo input state management
+
+## 2.20.1
+
+### Patch Changes
+
+- 16c29db: ⬆️ Upgrade dependencies
+
+## 2.20.0
+
+### Minor Changes
+
+- bce2132: add repo input to config
+
+## 2.19.1
+
+### Patch Changes
+
+- 1af3d23: Add Docker build caching in GitHub Actions to speed up multi-stage builds.
+
+## 2.19.0
+
+### Minor Changes
+
+- 296065e: Added JetBrains Mono font option.
+
+## 2.18.4
+
+### Patch Changes
+
+- 2e45d6e: Added Playwright test for full variant of CN, JP, and KR (Korean).
+
+  Added accessbility attributes for generic input/textbox components. Updated snapshots.
+
+## 2.18.3
+
+### Patch Changes
+
+- 5ac566c: Fix unexpected page caching
+
+## 2.18.2
+
+### Patch Changes
+
+- 791e6e7: Corrected jest update snapshot(s) flag back to -u.
+
+## 2.18.1
+
+### Patch Changes
+
+- 0bce0d1: Remove custom-rewrites.js which was used to handle large logo rewrites for Vercel
+
+## 2.18.0
+
+### Minor Changes
+
+- c7d053d: 🔍️ Rename url parameter descriptionEditable to custom_description
+
+## 2.17.0
+
+### Minor Changes
+
+- d73c1be: Full migration from page router to app router.
+
+  Upgraded to Next.js 15/React19 via official codemod and applied type fixes.
+
+  Huge props to [@Keming-He](https://github.com/KemingHe)
+
+## 2.16.0
+
+### Minor Changes
+
+- e7f708e: Added error handling for long svg data uri input
+
+  Thanks to [slusy](https://github.com/slusy)
+
+## 2.15.1
+
+### Patch Changes
+
+- ca0cebb: Set up dev container
+
+## 2.15.0
+
+### Minor Changes
+
+- c739cec: Support transparent background
+
+## 2.14.6
+
+### Patch Changes
+
+- c32156a: remove unused npm packages
+
+  Thanks to [@Sunny-64](https://github.com/Sunny-64)
+
+## 2.14.5
+
+### Patch Changes
+
+- 0b61791: Migrated from yarn to pnpm package manager
+  Updated scripts, hooks, and README.md
+
+  Thanks to [@Keming-He](https://github.com/KemingHe)
+
+  Update Dockerfile
+
+## 2.14.4
+
+### Patch Changes
+
+- 3d13fc9: Display release versions in http response, html head, and footer
+
+## 2.14.3
+
+### Patch Changes
+
+- 99a37ce: Limited GITHUB_TOKEN process.env check to CI only, as 'next start` in Playwright auto-loads .env for local devs.
+
+  Thanks to [@Keming-He](https://github.com/KemingHe)
+
+## 2.14.2
+
+### Patch Changes
+
+- bda22bd: Migrated from relative import to import aliasing for better code maintain-ability.
+
+  Also organized imports into [3rd-party], [types], and [local].
+
+  Thanks to [@Keming-He](https://github.com/KemingHe)
+
+## 2.14.1
+
+### Patch Changes
+
+- 038d7d0: Migrated from hard-coded solution to using @next/third-parties/google GoogleTagManager component.
+
+  Thanks to [@Keming-He](https://github.com/KemingHe)
+
+## 2.14.0
+
+### Minor Changes
+
+- e804b07: Bump DaisyUI to v4
+
+  Thanks to [@Keming-He](https://github.com/KemingHe)
+
+## 2.13.0
+
+### Minor Changes
+
+- 81543b8: Added playwright e2e testing to capture user stories and main UI.
+
+  Updated contributor setup instructions and contributor list in README.md.
+
+  Thanks to [@Keming-He](https://github.com/KemingHe)
+
+## 2.12.2
+
+### Patch Changes
+
+- 82f1b49: moved strictly build-time deps to dev-deps list in package.json
+
+## 2.12.1
+
+### Patch Changes
+
+- ce207c2: Improve config error logging
+
+## 2.12.0
+
+### Minor Changes
+
+- f60a1fe: Upgrade dependencies
+
+## 2.11.1
+
+### Patch Changes
+
+- 76ef894: Improve docker build process
+  Reduce docker image size
+
+## 2.11.0
+
+### Minor Changes
+
+- 610575c: upgrade node 22
+
+## 2.10.0
+
+### Minor Changes
+
+- 36d53cd: Add docker deployment
+
+## 2.9.0
+
+### Minor Changes
+
+- 5b7ec64: Upgrade dependencies
+
+## 2.8.7
+
+### Patch Changes
+
+- 194b120: Throw an Error for Non-OK GraphQL Status Codes
+
+## 2.8.6
+
+### Patch Changes
+
+- dfaea81: Remove vercel specific code, add Netlify specific code
+
+## 2.8.5
+
+### Patch Changes
+
+- 488cb95: Update Vercel to Netlify
+
 ## 2.8.4
 
 ### Patch Changes

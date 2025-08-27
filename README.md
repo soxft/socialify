@@ -54,23 +54,74 @@ You can use cli tool [mheap/github-social-image](https://github.com/mheap/github
   </a>
 </p>
 
-## Development
+## Contributing
 
-- Create a GitHub token from `Settings > Developer settings > Personal access tokens`, you'll need it in when setting up environemnt variables.
-- You'll need the `repo` scope
-- Run the following commands to set up the Development server:
+Please read and agree to our [Contributor Covenant Code of Conduct](https://github.com/wei/socialify/blob/master/CONTRIBUTING.md) to get started.
 
-  ```shell
-  # Clone
-  git clone https://github.com/wei/socialify.git && cd $_
+### Running Socialify Locally
 
-  # Set environment variables in .env
-  cp .env.example .env
+Run the following commands to get Socialify running locally:
 
-  yarn install
-  yarn build
-  yarn dev
-  ```
+```shell
+# Clone your fork of wei/socialify if contributing
+git clone https://github.com/wei/socialify.git && cd $_
+
+# Set environment variables in .env.
+cp .env.example .env
+
+# Install dependencies
+pnpm install
+
+# Start local development server
+pnpm dev
+```
+
+### Testing and Committing
+
+[![Open in Dev Container](https://img.shields.io/static/v1?label=Dev%20Containers&message=Click%20to%20Launch&color=blue)](https://open.vscode.dev/wei/socialify)
+
+If you already have VS Code and Docker installed locally, you can also click [here](https://vscode.dev/redirect?url=vscode://ms-vscode-remote.remote-containers/cloneInVolume?url=https://github.com/wei/socialify) to get started. Clicking this link will cause VS Code to automatically install the Dev Containers extension if needed, clone the source code into a container volume, and spin up a dev container for use.
+
+Socialify uses [`biomejs`](https://biomejs.dev/) as linter/formatter, [`Jest`](https://jestjs.io/) for unit testing, and [`Playwright`](https://playwright.dev/) for end-to-end testing.
+
+Make sure to run and pass the linter, unit and end-to-end tests locally before committing your code. Please let us know in case you need to update the test snapshots. More in `"scripts"` section in your `package.json` file.
+
+```shell
+# Required: Set environment variables in .env.
+cp .env.example .env
+
+# Run linter/formatter
+pnpm lint
+
+# Fix linter/formatter errors
+# pnpm lint:fix
+
+# Run unit tests
+pnpm test:unit
+
+# Install Playwright dependencies (first-time)
+# pnpm playwright:install
+
+# Run e2e tests
+pnpm test:e2e
+```
+
+**One** changeset file is required per each PR.
+
+  1. Run `pnpm changeset` and select the appropriate senmantic versioning type (major, minor, patch) based on the scope of the change, together with an concise message.
+  2. You will see a new markdown file with a silly name like `milk-honey-eggs.md` in the `.changeset` directory.
+  3. Test, commit, and push your code **WITH** this changeset file when submitting a new PR.
+  4. You can manually edit it to include more information. For example:
+
+      ```markdown
+      ---
+      "socialify": minor
+      ---
+
+      Added playwright e2e testing to capture user stories and main UI
+      ```
+
+That's it! We are tremendously grateful for your contribution to Socialify! :heart:
 
 ## Authors
 
@@ -79,14 +130,22 @@ You can use cli tool [mheap/github-social-image](https://github.com/mheap/github
 
 _Part of [@MLH-Fellowship](https://github.com/MLH-Fellowship) Pod 1.0.6_
 
+## Community
+
+These are the heros who continue to make Socialify the best social preview generator for the community.
+
+<a href="https://github.com/wei/socialify/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=wei/socialify" />
+</a>
+
 ## License
 
 - [MIT](https://wei.mit-license.org)
 
 ## Hosting
 
-<a href="https://vercel.com/?utm_source=github-socialify&utm_campaign=oss">
-  <img width="159" height="33" alt="Powered by Vercel" src="https://user-images.githubusercontent.com/5880908/218415645-ac47f9ba-0d60-47eb-950c-ed10bba1e7f6.png" />
+<a href="https://www.netlify.com">
+  <img width="114" height="50" alt="Deploys by Netlify" src="https://www.netlify.com/v3/img/components/netlify-dark.svg" />
 </a>
 
 ### SLA

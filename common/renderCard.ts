@@ -1,18 +1,19 @@
-import { SatoriOptions } from 'satori'
-import { mergeConfig } from './configHelper'
-import { languageFontMap } from './font'
-import { getRepoDetails } from './github/repoQuery'
-import { HOST_PREFIX } from './helpers'
-import { getIconCode, loadEmoji } from './twemoji'
-import { Font } from './types/configType'
-import QueryType from './types/queryType'
+import type { SatoriOptions } from 'satori'
+
+import { mergeConfig } from '@/common/configHelper'
+import { languageFontMap } from '@/common/font'
+import { getRepoDetails } from '@/common/github/repoQuery'
+import { HOST_PREFIX } from '@/common/helpers'
+import { getIconCode, loadEmoji } from '@/common/twemoji'
+import { Font } from '@/common/types/configType'
+import type QueryType from '@/common/types/queryType'
 
 export async function getFont(
   font: Font,
   weight: SatoriOptions['fonts'][0]['weight']
 ): Promise<SatoriOptions['fonts'][0]> {
   const fontSlug = font.replace(/\s/g, '-').toLowerCase()
-  const cdnUrl = `https://cdn.jsdelivr.net/npm/@fontsource/${fontSlug}/files/${fontSlug}-all-${weight}-normal.woff`
+  const cdnUrl = `https://unpkg.com/@fontsource/${fontSlug}/files/${fontSlug}-latin-${weight}-normal.woff`
 
   return {
     name: font,
@@ -129,7 +130,8 @@ export async function getCardConfig(query: QueryType) {
 
   const config = mergeConfig(repository, query)
 
-  if (!config) throw Error('Configuration failed to generate')
+  if (!config)
+    throw Error(`[${query._owner}/${query._name}] Failed to generate config.`)
 
   return config
 }

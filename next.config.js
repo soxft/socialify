@@ -1,10 +1,9 @@
-const CustomRewrites = require('./custom-rewrites')
+const { version } = require('./package.json')
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   async rewrites() {
     return [
-      ...CustomRewrites,
       {
         source: '/:_owner/:_name/image',
         destination: '/api/image',
@@ -22,9 +21,18 @@ const nextConfig = {
         source: '/:_owner/:_name/jpg',
         destination: '/api/png',
       },
+    ]
+  },
+  async headers() {
+    return [
       {
-        source: '/graphql',
-        destination: '/api/graphql',
+        source: '/:path*',
+        headers: [
+          {
+            key: 'x-socialify-version',
+            value: version,
+          },
+        ],
       },
     ]
   },
