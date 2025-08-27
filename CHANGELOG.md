@@ -1,5 +1,11 @@
 # socialify
 
+## 2.21.13
+
+### Patch Changes
+
+- 79a0807: Throw an Error for Non-OK GraphQL Status Codes
+
 ## 2.21.12
 
 ### Patch Changes
